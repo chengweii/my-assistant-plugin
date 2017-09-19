@@ -1,13 +1,26 @@
-function callResponse(){
-	$.get('https://www.baidu.com', function(html){
-		chrome.notifications.create(null, {
-			type: 'image',
-			iconUrl: 'img/icon.png',
-			title: '祝福',
-			message: '骚年，祝你圣诞快乐！Merry christmas!',
-			imageUrl: 'img/sds.png'
+function callResponse() {
+	$.get('https://www.baidu.com', function(html) {
+		var notificationId = util.openNewNotification({
+			type : 'image',
+			iconUrl : 'img/icon.png',
+			title : 'test',
+			message : 'Merry christmas!',
+			imageUrl : 'http://icon.nipic.com/BannerPic/20170815/original/20170815181219_1.jpg',
+			buttons : [ {
+				title : 'call',
+				iconUrl : 'img/icon.png',
+				click : function() {
+					alert('call telphone');
+				}
+			}, {
+				title : 'email',
+				iconUrl : 'img/icon.png',
+				click : function() {
+					alert('send email');
+				}
+			} ]
 		});
 	});
 }
-MyAssistant.openUrlNewTab('http://127.0.0.1:9898/assistant-web');
-setInterval(callResponse,3000);
+util.openNewTab('http://127.0.0.1:9898/assistant-web');
+setInterval(callResponse, 5000);
