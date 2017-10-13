@@ -1,27 +1,37 @@
+var errorCount = 0;
 function callResponse() {
-	$.get('http://127.0.0.1:9999/assistant-web?requestContent=getMsgFromLocalQueue', function(data) {
-		var msgList = $.parseJSON(data);
-		for(var index in msgList){
-			var notificationId = util.openNewNotification({
-				type : 'image',
-				iconUrl : 'img/icon.png',
-				title : msgList[index].title,
-				message : msgList[index].content,
-				imageUrl : msgList[index].image,
-				buttons : [ {
-					title : 'call',
-					iconUrl : 'img/icon.png',
-					click : function() {
-						alert('call telphone');
-					}
-				}, {
-					title : 'email',
-					iconUrl : 'img/icon.png',
-					click : function() {
-						alert('send email');
-					}
-				} ]
-			});
+	if (errorCount == 3) {
+		return false;
+	}
+	$.ajax({
+		url: "http://127.0.0.1:9999/assistant-web?requestContent=getMsgFromLocalQueue",
+		cache: false,
+		success: function (data) {
+			var msgList = $.parseJSON(data);
+			for (var index in msgList) {
+				var notificationId = util.openNewNotification({
+					type: 'image',
+					iconUrl: 'img/icon.png',
+					title: msgList[index].title,
+					message: msgList[index].content,
+					imageUrl: msgList[index].image,
+					buttons: [{
+						title: 'call',
+						iconUrl: 'img/icon.png',
+						click: function () {
+							alert('call telphone');
+						}
+					}, {
+						title: 'email',
+						iconUrl: 'img/icon.png',
+						click: function () {
+							alert('send email');
+						}
+					}]
+				});
+			}
+		}, error: function (data) {
+			errorCount++;
 		}
 	});
 }
@@ -75,14 +85,14 @@ function bindItem(type, item) {
 	a.click(recordHistory);
 	a.attr("title", item.title);
 
-	if(item.icon){
+	if (item.icon) {
 		a.find("span").css("background-image", "url(img/" + item.icon + ")");
-	}else if(item["icon-text"]){
+	} else if (item["icon-text"]) {
 		a.find("span").html(item["icon-text"]);
-	}else{
+	} else {
 		a.find("span").css("background-image", "url(img/icon.png)");
 	}
-	
+
 	a.find("i").html(item.title);
 	a.removeClass("template");
 	$("." + type + "-list").append(a);
@@ -109,7 +119,7 @@ function recordHistory() {
 	bindOftenList();
 
 	var url = $(this).attr("url");
-	window.open(url,name);
+	window.open(url, name);
 }
 
 function bubbleSort(arr) {
@@ -157,3 +167,5 @@ initConfig();
 $(".sync-btn").click(function () {
 	syncConfig();
 });
+
+$("body").mzDialog();
