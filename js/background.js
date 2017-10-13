@@ -1,10 +1,10 @@
 var errorCount = 0;
 function callResponse() {
-	if (errorCount == 3) {
-		return false;
-	}
+	//if (errorCount == 3) {
+	//	return false;
+	//}
 	$.ajax({
-		url: "http://127.0.0.1:9999/assistant-web?requestContent=getMsgFromLocalQueue",
+		url: "http://127.0.0.1:9898/assistant-web/?requestContent=getMsgFromLocalQueue",
 		cache: false,
 		success: function (data) {
 			var msgList = $.parseJSON(data);
