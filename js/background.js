@@ -45,7 +45,7 @@ var cacheKey = "datalist";
 function syncConfig() {
 	$.ajax({
 		type: "get",
-		url: "https://raw.githubusercontent.com/WHProject/work-data-space/master/work/%E5%8A%A9%E6%89%8B/assist.json",
+		url: "https://raw.githubusercontent.com/chengweii/work-data-space/master/work/%E5%8A%A9%E6%89%8B/assist.json",
 		cache: false,
 		success: function (data) {
 			var dataList = $.parseJSON(data);
