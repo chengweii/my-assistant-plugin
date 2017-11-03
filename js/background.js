@@ -1,58 +1,39 @@
-var errorCount = 0;
-function callResponse() {
-	//if (errorCount == 3) {
-	//	return false;
-	//}
-	$.ajax({
-		url: "http://127.0.0.1:9898/assistant-web/?requestContent=getMsgFromLocalQueue",
-		cache: false,
-		success: function (data) {
-			var msgList = $.parseJSON(data);
-			for (var index in msgList) {
-				var notificationId = util.openNewNotification({
-					type: 'image',
-					iconUrl: 'img/icon.png',
-					title: msgList[index].title,
-					message: msgList[index].content,
-					imageUrl: msgList[index].image,
-					buttons: [{
-						title: 'call',
-						iconUrl: 'img/icon.png',
-						click: function () {
-							alert('call telphone');
-						}
-					}, {
-						title: 'email',
-						iconUrl: 'img/icon.png',
-						click: function () {
-							alert('send email');
-						}
-					}]
-				});
-			}
-		}, error: function (data) {
-			errorCount++;
-		}
-	});
+var remindTimes = [ 9, 10, 11, 15, 16, 17, 18 ];
+function remind() {
+	var date = new Date();
+	var remindTime = date.format('yyyy-MM-dd hh');
+	var lastRemindTime = Settings.getValue('remindTime');
+	if (remindTimes.indexOf(date.getHours()) != -1
+			&& (!lastRemindTime || lastRemindTime != remindTime)) {
+		util.openNewNotification({
+			type : 'image',
+			iconUrl : 'img/icon.png',
+			title : '喝杯水，休息一下。',
+			message : 'Take a cup of water and have a rest.',
+			imageUrl : 'img/rest.png'
+		});
+		Settings.setValue('remindTime', remindTime);
+	}
 }
-setInterval(callResponse, 5000);
+setInterval(remind, 5000);
 
-chrome.browserAction.onClicked.addListener(function (tab) {
+chrome.browserAction.onClicked.addListener(function(tab) {
 	window.open(chrome.extension.getURL('background.html'), "develop-assist");
 });
 
 var cacheKey = "datalist";
 function syncConfig() {
-	$.ajax({
-		type: "get",
-		url: "https://raw.githubusercontent.com/chengweii/work-data-space/master/work/%E5%8A%A9%E6%89%8B/assist.json",
-		cache: false,
-		success: function (data) {
-			var dataList = $.parseJSON(data);
-			Settings.setValue(cacheKey, data);
-			bindList(data);
-		}
-	});
+	$
+			.ajax({
+				type : "get",
+				url : "https://raw.githubusercontent.com/chengweii/work-data-space/master/work/%E5%8A%A9%E6%89%8B/assist.json",
+				cache : false,
+				success : function(data) {
+					var dataList = $.parseJSON(data);
+					Settings.setValue(cacheKey, data);
+					bindList(data);
+				}
+			});
 }
 
 function initConfig() {
@@ -69,8 +50,8 @@ var toolList = [];
 function bindList(data) {
 	$(".panel").html("");
 	var dataList = $.parseJSON(data);
-	for (var type in dataList) {
-		for (var index in dataList[type]) {
+	for ( var type in dataList) {
+		for ( var index in dataList[type]) {
 			bindItem(type, dataList[type][index]);
 			toolList.push(dataList[type][index]);
 		}
@@ -143,13 +124,16 @@ function bindOftenList() {
 	var historyData = Settings.getValue(cacheHistoryKey);
 	var useHistory = $.parseJSON(historyData);
 	var oftenList = [];
-	for (var p in useHistory) {
-		oftenList.push({ name: p, value: useHistory[p] });
+	for ( var p in useHistory) {
+		oftenList.push({
+			name : p,
+			value : useHistory[p]
+		});
 	}
 	var oftenListDesc = bubbleSort(oftenList);
 	var i = 0
-	for (var p in oftenListDesc) {
-		for (var t in toolList) {
+	for ( var p in oftenListDesc) {
+		for ( var t in toolList) {
 			if (oftenListDesc[p].name == toolList[t].title) {
 				bindItem('often', toolList[t]);
 				break;
@@ -164,7 +148,7 @@ function bindOftenList() {
 
 initConfig();
 
-$(".sync-btn").click(function () {
+$(".sync-btn").click(function() {
 	syncConfig();
 });
 
