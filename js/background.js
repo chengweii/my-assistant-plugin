@@ -1,10 +1,11 @@
-var remindTimes = [ 9, 10, 11, 15, 16, 17, 18 ];
+var remindTimes = [ 9, 10, 11, 15, 16, 17, 18, 19 ];
 function remind() {
 	var date = new Date();
 	var remindTime = date.format('yyyy-MM-dd hh');
 	var lastRemindTime = Settings.getValue('remindTime');
 	if (remindTimes.indexOf(date.getHours()) != -1
 			&& (!lastRemindTime || lastRemindTime != remindTime)) {
+		Settings.setValue('remindTime', remindTime);
 		util.openNewNotification({
 			type : 'image',
 			iconUrl : 'img/icon.png',
@@ -12,7 +13,6 @@ function remind() {
 			message : 'Take a cup of water and have a rest.',
 			imageUrl : 'img/rest.png'
 		});
-		Settings.setValue('remindTime', remindTime);
 	}
 }
 setInterval(remind, 5000);
@@ -122,6 +122,9 @@ function bubbleSort(arr) {
 function bindOftenList() {
 	$(".often-list").html("");
 	var historyData = Settings.getValue(cacheHistoryKey);
+	if (!historyData) {
+		return;
+	}
 	var useHistory = $.parseJSON(historyData);
 	var oftenList = [];
 	for ( var p in useHistory) {
@@ -153,3 +156,43 @@ $(".sync-btn").click(function() {
 });
 
 $("body").mzDialog();
+
+$(".search-btn")
+		.click(
+				function() {
+					var word = $(".search-input").val();
+					var url = "https://www.baidu.com/s?ie=utf8&oe=utf8&tn=98010089_dg&ch=4&wd="
+							+ word;
+					util.openNewTab(url);
+				});
+
+function renderProcessList() {
+	var goals = [ {
+		name : "TEC",
+		start : "2017-07-12",
+		end : "2018-04-12"
+	}, {
+		name : "SPORT",
+		start : "2017-07-12",
+		end : "2017-12-12"
+	}, {
+		name : "CALM-HOME",
+		start : "2017-11-02",
+		end : "2017-12-12"
+	} ];
+	var origin = $(".progress");
+	for(var index in goals){
+		var template = origin.clone();
+		var goal = goals[index];
+		template.find(".barTitle").html(goal.name);
+		var end = util.date.stringToDate(goal.end);
+		var start = util.date.stringToDate(goal.start);
+		var leftDays = util.date.getDiff(end,new Date());
+		var allDays = util.date.getDiff(end,start);
+		template.find(".barContent").html("Start "+goal.start+",Finish "+goal.end+",Left <font class='left-days'>"+leftDays+"</font> day.");
+		template.find(".vader").css("width",parseInt((allDays-leftDays)/allDays*100)+"%");
+		$(".progress-container").append(template);
+		template.show();
+	}
+}
+renderProcessList();

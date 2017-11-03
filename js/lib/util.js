@@ -1,30 +1,30 @@
-﻿Date.prototype.format = function (format) {
+﻿Date.prototype.format = function(format) {
 	var o = {
-		"M+": this.getMonth() + 1,
-		"d+": this.getDate(),
-		"h+": this.getHours(),
-		"m+": this.getMinutes(),
-		"s+": this.getSeconds(),
-		"q+": Math.floor((this.getMonth() + 3) / 3),
-		"S": this.getMilliseconds()
+		"M+" : this.getMonth() + 1,
+		"d+" : this.getDate(),
+		"h+" : this.getHours(),
+		"m+" : this.getMinutes(),
+		"s+" : this.getSeconds(),
+		"q+" : Math.floor((this.getMonth() + 3) / 3),
+		"S" : this.getMilliseconds()
 	}
 	if (/(y+)/.test(format))
 		format = format.replace(RegExp.$1, (this.getFullYear() + "")
-			.substr(4 - RegExp.$1.length));
-	for (var k in o)
+				.substr(4 - RegExp.$1.length));
+	for ( var k in o)
 		if (new RegExp("(" + k + ")").test(format))
 			format = format.replace(RegExp.$1, RegExp.$1.length == 1 ? o[k]
-				: ("00" + o[k]).substr(("" + o[k]).length));
+					: ("00" + o[k]).substr(("" + o[k]).length));
 	return format;
 }
 
-$.fn.serializeObject = function () {
+$.fn.serializeObject = function() {
 	var o = {};
 	var a = this.serializeArray();
-	$.each(a, function () {
+	$.each(a, function() {
 		if (o[this.name] !== undefined) {
 			if (!o[this.name].push) {
-				o[this.name] = [o[this.name]];
+				o[this.name] = [ o[this.name] ];
 			}
 			o[this.name].push(this.value || '');
 		} else {
@@ -35,34 +35,34 @@ $.fn.serializeObject = function () {
 };
 
 window.util = {
-	openNewTab: function (url) {
+	openNewTab : function(url) {
 		chrome.tabs.create({
-			url: url
+			url : url
 		});
 	},
-	getNotificationId: function () {
+	getNotificationId : function() {
 		var id = Math.floor(Math.random() * 9007199254740992) + 1;
 		return id.toString();
 	},
-	openNewNotification: function (options) {
+	openNewNotification : function(options) {
 		var notificationId = util.getNotificationId();
 
 		var notificationOptions = {
-			type: options.type,
-			iconUrl: options.iconUrl,
-			title: options.title,
-			message: options.message
+			type : options.type,
+			iconUrl : options.iconUrl,
+			title : options.title,
+			message : options.message
 		};
 		if (options.imageUrl) {
 			notificationOptions.imageUrl = options.imageUrl;
 		}
 		if (options.buttons && options.buttons.length > 0) {
 			notificationOptions.buttons = [];
-			for (var index in options.buttons) {
+			for ( var index in options.buttons) {
 				var button = options.buttons[index];
 				notificationOptions.buttons.push({
-					title: button.title,
-					iconUrl: button.iconUrl
+					title : button.title,
+					iconUrl : button.iconUrl
 				});
 			}
 		}
@@ -70,8 +70,8 @@ window.util = {
 		chrome.notifications.create(notificationId, notificationOptions);
 
 		if (options.buttons && options.buttons.length > 0) {
-			chrome.notifications.onButtonClicked.addListener(function (notiId,
-				btnId) {
+			chrome.notifications.onButtonClicked.addListener(function(notiId,
+					btnId) {
 				if (notiId === notificationId) {
 					var fn = options.buttons[btnId].click;
 					if (fn) {
@@ -82,8 +82,8 @@ window.util = {
 		}
 
 		if (options.closeTimeout) {
-			setTimeout(function () {
-				chrome.notifications.clear(notificationId, function () {
+			setTimeout(function() {
+				chrome.notifications.clear(notificationId, function() {
 					// callback
 				});
 			}, options.closeTimeout, notificationId);
@@ -91,14 +91,14 @@ window.util = {
 
 		return notificationId;
 	},
-	getQueryString: function (name) {
+	getQueryString : function(name) {
 		var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
 		var r = window.location.search.substr(1).match(reg);
 		if (r != null)
 			return unescape(r[2]);
 		return null;
 	},
-	unique: function (array) {
+	unique : function(array) {
 		var res = [];
 		var json = {};
 		for (var i = 0; i < array.length; i++) {
@@ -109,14 +109,14 @@ window.util = {
 		}
 		return res;
 	},
-	form: {
-		requireCheck: function (styleClass) {
+	form : {
+		requireCheck : function(styleClass) {
 			var info = {
-				hasError: false,
-				errMsg: ""
+				hasError : false,
+				errMsg : ""
 			};
 			var className = styleClass ? styleClass : "require";
-			$("." + className).each(function (index, item) {
+			$("." + className).each(function(index, item) {
 				var value = $(item).val();
 				if (!value || !value.trim()) {
 					info.hasError = true;
@@ -125,6 +125,17 @@ window.util = {
 				}
 			});
 			return info;
+		}
+	},
+	date : {
+		getDiff : function(end, start) {
+			var result = end.getTime() - start.getTime();
+			var days = Math.floor(result / (24 * 3600 * 1000));
+			return days;
+		},
+		stringToDate : function(fDate) {
+			var fullDate = fDate.split("-");
+			return new Date(fullDate[0], fullDate[1] - 1, fullDate[2], 0, 0, 0);
 		}
 	}
 };
