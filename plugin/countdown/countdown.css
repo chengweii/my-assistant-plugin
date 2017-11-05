@@ -1,0 +1,57 @@
+.countdown-pie {
+	width: 200px;
+	height: 200px;
+	background-color: blue;
+	border-radius: 100px;
+	position: absolute;
+}
+
+.countdown-pie1 {
+	clip: rect(0px, 200px, 200px, 100px);
+	-o-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-webkit-transform: rotate(0deg);
+	background-color: #fff;
+}
+
+.countdown-pie2 {
+	clip: rect(0px, 100px, 200px, 0px);
+	-o-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-webkit-transform: rotate(0deg);
+	background-color: #fff;
+}
+
+.countdown-hold {
+	width: 200px;
+	height: 200px;
+	position: absolute;
+	z-index: 1;
+}
+
+.countdown-bg {
+	width: 200px;
+	height: 200px;
+	border-radius: 200px;
+	box-shadow: 0 0 5px #000;
+	position: absolute;
+}
+
+.countdown-time {
+	font-family:Georgia;
+	width: 160px;
+	height: 160px;
+	margin: 20px 0 0 20px;
+	border-radius: 160px;
+	position: absolute;
+	z-index: 1;
+	text-align: center;
+	line-height: 160px;
+	font-size: 80px;
+}
+
+.countdown-input {
+	height: 20px;
+	width: 50px;
+	margin-top: 68px;
+}

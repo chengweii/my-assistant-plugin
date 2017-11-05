@@ -9,6 +9,10 @@
 <script type="text/javascript" src="js/lib/settings.js"></script>
 <script type="text/javascript" src="js/lib/dialog.js"></script>
 <script type="text/javascript" src="js/lib/util.js"></script>
+
+<link rel="stylesheet" href="plugin/countdown/countdown.css" type="text/css" />
+<script type="text/javascript" src="plugin/countdown/countdown.js"></script>
+
 <style>
 a {
 	text-decoration: none;
@@ -86,7 +90,8 @@ div.container {
 }
 
 .col-4 {
-	width: 33.33%
+	float:left;
+	width: 33.33%;
 }
 
 .search-input {
@@ -124,17 +129,22 @@ div.container {
 	background-color: #fff;
 }
 
-.barTitle{
-	font-size:15px;
-	font-weight:bold;
+.barTitle {
+	font-size: 15px;
+	font-weight: bold;
 }
 
-.barContent{
+.barContent {
 	font-style: italic;
 }
 
-.left-days{
-	font-weight:bold;
+.left-days {
+	font-weight: bold;
+}
+
+.timer-container{
+	height:200px;
+	padding-left:90px;
 }
 </style>
 </head>
@@ -158,16 +168,20 @@ div.container {
 			<input type="text" class="search-input" maxlength="100" /> <input
 				type="button" value="百度一下" class="btn search-btn" />
 		</div>
-		<div class="row" style="margin-top:10px;margin-bottom:10px;">
+		<div class="row" style="margin-top: 20px; margin-bottom: 20px;">
 			<div class="col-4 progress-container">
-				<div class="progress" style="display:none;">
-					<div class="barTitle" style="text-align: left;">TEC</div>
+				<div class="progress" style="display: none;">
+					<div class="barTitle" style="text-align: left;"></div>
 					<span class="barControl"><div class="barContro_space">
-							<span class="vader" style="height: 4px; width: 41%;"></span>
-						</div></span> <span class="barContent">Start 2017-07-12,Finish
-						2018-04-18,Left <font class="left-days">166</font> day.</span>
+							<span class="vader" style="height: 4px; width: 0%;"></span>
+						</div></span> <span class="barContent"></span>
 				</div>
 			</div>
+			<div class="col-4 timer-container">
+				<div class="countdown" total-time="1"></div>
+			</div>
+		</div>
+		<div style="clear:both;">
 		</div>
 		<div class="title">
 			<h1>COMMON LIST</h1>

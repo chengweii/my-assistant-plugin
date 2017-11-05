@@ -181,18 +181,34 @@ function renderProcessList() {
 		end : "2017-12-12"
 	} ];
 	var origin = $(".progress");
-	for(var index in goals){
+	for ( var index in goals) {
 		var template = origin.clone();
 		var goal = goals[index];
 		template.find(".barTitle").html(goal.name);
 		var end = util.date.stringToDate(goal.end);
 		var start = util.date.stringToDate(goal.start);
-		var leftDays = util.date.getDiff(end,new Date());
-		var allDays = util.date.getDiff(end,start);
-		template.find(".barContent").html("Start "+goal.start+",Finish "+goal.end+",Left <font class='left-days'>"+leftDays+"</font> day.");
-		template.find(".vader").css("width",parseInt((allDays-leftDays)/allDays*100)+"%");
+		var leftDays = util.date.getDiff(end, new Date());
+		var allDays = util.date.getDiff(end, start);
+		template.find(".barContent").html(
+				"Start " + goal.start + ",Finish " + goal.end
+						+ ",Left <font class='left-days'>" + leftDays
+						+ "</font> day.");
+		template.find(".vader").css("width",
+				parseInt((allDays - leftDays) / allDays * 100) + "%");
 		$(".progress-container").append(template);
 		template.show();
 	}
 }
 renderProcessList();
+
+$(".countdown").countdown({
+	callback : function() {
+		util.openNewNotification({
+			type : 'image',
+			iconUrl : 'img/icon.png',
+			title : '番茄时间结束,干的不错。',
+			message : 'Good job!',
+			imageUrl : 'img/rest.png'
+		});
+	}
+});
