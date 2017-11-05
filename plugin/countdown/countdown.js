@@ -129,4 +129,7 @@ $.fn.countdown = function(options) {
 					$("." + inputClass).focus();
 				}
 			});
+	
+	$("." + textClass).attr("mode", "edit");
+	$("." + textClass).html("0");
 }
