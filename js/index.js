@@ -146,16 +146,20 @@ $(".search-btn")
 function renderProcessList() {
 	var goals = [ {
 		name : "TEC",
-		start : "2017-07-12",
-		end : "2018-04-12"
+		start : "2017-11-06",
+		end : "2018-02-14"
 	}, {
-		name : "SPORT",
-		start : "2017-07-12",
-		end : "2017-12-12"
+		name : "LOSE-WEIGHT",
+		start : "2017-11-06",
+		end : "2017-12-06"
 	}, {
 		name : "CALM-HOME",
-		start : "2017-11-02",
-		end : "2017-12-12"
+		start : "2017-11-06",
+		end : "2017-11-13"
+	}, {
+		name : "JOB-HOPPING",
+		start : "2017-11-06",
+		end : "2018-03-15"
 	} ];
 	var origin = $(".progress");
 	for ( var index in goals) {
