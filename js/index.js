@@ -1,3 +1,4 @@
+window.name = "develop-assist";
 var cacheKey = "datalist";
 function syncConfig() {
 	$
