@@ -10,7 +10,8 @@
 <script type="text/javascript" src="js/lib/dialog.js"></script>
 <script type="text/javascript" src="js/lib/util.js"></script>
 
-<link rel="stylesheet" href="plugin/countdown/countdown.css" type="text/css" />
+<link rel="stylesheet" href="plugin/countdown/countdown.css"
+	type="text/css" />
 <script type="text/javascript" src="plugin/countdown/countdown.js"></script>
 
 <style>
@@ -90,7 +91,7 @@ div.container {
 }
 
 .col-4 {
-	float:left;
+	float: left;
 	width: 33.33%;
 }
 
@@ -142,9 +143,21 @@ div.container {
 	font-weight: bold;
 }
 
-.timer-container{
-	height:200px;
-	padding-left:90px;
+.timer-container {
+	height: 200px;
+	padding-left: 90px;
+}
+
+.favorite-list {
+	margin-top: 5px;
+	margin-bottom: 5px; padding-left : 210px;
+	text-align: left;
+	padding-left: 210px;
+}
+
+.favorite-list a{
+	padding-right: 20px;
+	color: #3194d0;
 }
 </style>
 </head>
@@ -167,6 +180,8 @@ div.container {
 		<div class="row" style="text-align: center;">
 			<input type="text" class="search-input" maxlength="100" /> <input
 				type="button" value="百度一下" class="btn search-btn" />
+			<div class="favorite-list">
+			</div>
 		</div>
 		<div class="row" style="margin-top: 20px; margin-bottom: 20px;">
 			<div class="col-4 progress-container">
@@ -181,8 +196,7 @@ div.container {
 				<div class="countdown" total-time="1"></div>
 			</div>
 		</div>
-		<div style="clear:both;">
-		</div>
+		<div style="clear: both;"></div>
 		<div class="title">
 			<h1>COMMON LIST</h1>
 		</div>
