@@ -3,7 +3,7 @@ function syncConfig() {
 	$
 			.ajax({
 				type : "get",
-				url : "https://raw.githubusercontent.com/chengweii/work-data-space/master/work/%E5%8A%A9%E6%89%8B/assist.json",
+				url : "https://raw.githubusercontent.com/chengweii/my-assistant-plugin/master/data/menu.json",
 				cache : false,
 				success : function(data) {
 					var dataList = $.parseJSON(data);

@@ -121,6 +121,12 @@
             "title":"CSDN",
             "icon":"csdn.png",
             "url":"http://www.csdn.net/"
+        },
+        {
+            "title":"WikiHow",
+            "icon":"",
+            "icon-text":"WikiHow",
+            "url":"https://zh.wikihow.com/%E9%A6%96%E9%A1%B5"
         }
     ],
     "other":[
