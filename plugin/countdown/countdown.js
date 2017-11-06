@@ -23,7 +23,7 @@ $.fn.countdown = function(options) {
 
 	$(".countdown-bg").css("background-color", color);
 	$("." + textClass).css("background-color", inner_color);
-
+	
 	var showTime = function() {
 		totle = totle - 1;
 		if (totle == 0) {
@@ -36,9 +36,6 @@ $.fn.countdown = function(options) {
 			$(".countdown-bg").css("background-color", "#ffffff");
 			$("." + textClass).attr("mode", "edit");
 			$("." + textClass).html("0");
-			if(options.callback){
-				options.callback();
-			}
 		} else {
 			if (totle > 0 && MS > 0) {
 				MS = MS - 1;
@@ -124,12 +121,32 @@ $.fn.countdown = function(options) {
 						totalTime = parseInt($("." + inputClass).val()) * 60;
 						textDiv.attr("mode", "view");
 						$(".countdown-bg").css("background-color", color);
+						util.config.global.setValue('countdown',totalTime);
 						countDown();
 					});
 					$("." + inputClass).focus();
 				}
 			});
 	
-	$("." + textClass).attr("mode", "edit");
-	$("." + textClass).html("0");
+	var refreshTime = function(){
+		clearInterval($.fn.countdown.timer1);
+		clearInterval($.fn.countdown.timer2);
+		$(".countdown-bg").css("background-color", color);
+		$("." + textClass).css("background-color", inner_color);
+		var countdownLeftTime = util.config.global.getValue('countdown');
+		if(!countdownLeftTime){
+			$("." + textClass).attr("mode", "edit");
+			$("." + textClass).html("0");
+			$(".countdown-bg").css("background-color", inner_color);
+		}else{
+			totalTime = countdownLeftTime;
+			$("." + textClass).attr("mode", "view");
+			countDown();
+		}	
+	};
+	
+	document.addEventListener('visibilitychange', function() {
+		refreshTime();
+	});
+	refreshTime();
 }

@@ -1,3 +1,10 @@
+function getValue(key, defaultValue) {
+	return Settings.getValue(key, defaultValue);
+}
+function setValue(key, value) {
+	Settings.setValue(key, value);
+}
+
 var remindTimes = [ 9, 10, 11, 15, 16, 17, 18, 19 ];
 function remind() {
 	var date = new Date();
@@ -14,201 +21,30 @@ function remind() {
 			imageUrl : 'img/rest.png'
 		});
 	}
+	potato();
 }
+
+function potato() {
+	var potatoTime = Settings.getValue('countdown');
+	if (!isNaN(potatoTime)) {
+		if (potatoTime == '0') {
+			Settings.setValue('countdown', "");
+			util.openNewNotification({
+				type : 'image',
+				iconUrl : 'img/icon.png',
+				title : '番茄时间结束,干的不错。',
+				message : 'Good job!',
+				imageUrl : 'img/rest.png'
+			});
+		} else {
+			var leftTime = parseInt(potatoTime) - 5;
+			Settings.setValue('countdown', leftTime < 0 ? 0 : leftTime);
+		}
+	}
+}
+
 setInterval(remind, 5000);
 
 chrome.browserAction.onClicked.addListener(function(tab) {
-	window.open(chrome.extension.getURL('background.html'), "develop-assist");
-});
-
-var cacheKey = "datalist";
-function syncConfig() {
-	$
-			.ajax({
-				type : "get",
-				url : "https://raw.githubusercontent.com/chengweii/work-data-space/master/work/%E5%8A%A9%E6%89%8B/assist.json",
-				cache : false,
-				success : function(data) {
-					var dataList = $.parseJSON(data);
-					Settings.setValue(cacheKey, data);
-					bindList(data);
-				}
-			});
-}
-
-function initConfig() {
-	var data = Settings.getValue(cacheKey);
-	if (!data) {
-		syncConfig();
-	} else {
-		bindList(data);
-	}
-}
-
-var toolList = [];
-
-function bindList(data) {
-	$(".panel").html("");
-	var dataList = $.parseJSON(data);
-	for ( var type in dataList) {
-		for ( var index in dataList[type]) {
-			bindItem(type, dataList[type][index]);
-			toolList.push(dataList[type][index]);
-		}
-	}
-	bindOftenList();
-}
-
-function bindItem(type, item) {
-	var a = $(".template").clone();
-	a.attr("url", item.url);
-	a.attr("href", "javascript:void(0);");
-	a.click(recordHistory);
-	a.attr("title", item.title);
-
-	if (item.icon) {
-		a.find("span").css("background-image", "url(img/" + item.icon + ")");
-	} else if (item["icon-text"]) {
-		a.find("span").html(item["icon-text"]);
-	} else {
-		a.find("span").css("background-image", "url(img/icon.png)");
-	}
-
-	a.find("i").html(item.title);
-	a.removeClass("template");
-	$("." + type + "-list").append(a);
-	a.show();
-}
-
-var cacheHistoryKey = "useHistory";
-function recordHistory() {
-	var historyData = Settings.getValue(cacheHistoryKey);
-	var useHistory = {};
-	if (historyData) {
-		useHistory = $.parseJSON(historyData);
-	}
-	var name = $(this).attr("title");
-	if (useHistory[name]) {
-		useHistory[name] = parseInt(useHistory[name]) + 1;
-	} else {
-		useHistory[name] = 1;
-	}
-
-	var result = JSON.stringify(useHistory);
-	Settings.setValue(cacheHistoryKey, result);
-
-	bindOftenList();
-
-	var url = $(this).attr("url");
-	window.open(url, name);
-}
-
-function bubbleSort(arr) {
-	var len = arr.length, j;
-	var temp;
-	while (len > 1) {
-		for (j = 0; j < len - 1; j++) {
-			if (arr[j].value < arr[j + 1].value) {
-				temp = arr[j];
-				arr[j] = arr[j + 1];
-				arr[j + 1] = temp;
-			}
-		}
-		len--;
-	}
-	return arr;
-}
-
-function bindOftenList() {
-	$(".often-list").html("");
-	var historyData = Settings.getValue(cacheHistoryKey);
-	if (!historyData) {
-		return;
-	}
-	var useHistory = $.parseJSON(historyData);
-	var oftenList = [];
-	for ( var p in useHistory) {
-		oftenList.push({
-			name : p,
-			value : useHistory[p]
-		});
-	}
-	var oftenListDesc = bubbleSort(oftenList);
-	var i = 0
-	for ( var p in oftenListDesc) {
-		for ( var t in toolList) {
-			if (oftenListDesc[p].name == toolList[t].title) {
-				bindItem('often', toolList[t]);
-				break;
-			}
-		}
-		if (i == 19) {
-			break;
-		}
-		i++;
-	}
-}
-
-initConfig();
-
-$(".sync-btn").click(function() {
-	syncConfig();
-});
-
-$("body").mzDialog();
-
-$(".search-btn")
-		.click(
-				function() {
-					var word = $(".search-input").val();
-					var url = "https://www.baidu.com/s?ie=utf8&oe=utf8&tn=98010089_dg&ch=4&wd="
-							+ word;
-					util.openNewTab(url);
-				});
-
-function renderProcessList() {
-	var goals = [ {
-		name : "TEC",
-		start : "2017-07-12",
-		end : "2018-04-12"
-	}, {
-		name : "SPORT",
-		start : "2017-07-12",
-		end : "2017-12-12"
-	}, {
-		name : "CALM-HOME",
-		start : "2017-11-02",
-		end : "2017-12-12"
-	} ];
-	var origin = $(".progress");
-	for ( var index in goals) {
-		var template = origin.clone();
-		var goal = goals[index];
-		template.find(".barTitle").html(goal.name);
-		var end = util.date.stringToDate(goal.end);
-		var start = util.date.stringToDate(goal.start);
-		var leftDays = util.date.getDiff(end, new Date());
-		var allDays = util.date.getDiff(end, start);
-		template.find(".barContent").html(
-				"Start " + goal.start + ",Finish " + goal.end
-						+ ",Left <font class='left-days'>" + leftDays
-						+ "</font> day.");
-		template.find(".vader").css("width",
-				parseInt((allDays - leftDays) / allDays * 100) + "%");
-		$(".progress-container").append(template);
-		template.show();
-	}
-}
-renderProcessList();
-
-$(".countdown").countdown({
-	callback : function() {
-		util.openNewNotification({
-			type : 'image',
-			iconUrl : 'img/icon.png',
-			title : '番茄时间结束,干的不错。',
-			message : 'Good job!',
-			imageUrl : 'img/rest.png'
-		});
-	}
+	window.open(chrome.extension.getURL('index.html'), "develop-assist");
 });

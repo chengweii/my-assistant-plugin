@@ -109,6 +109,17 @@ window.util = {
 		}
 		return res;
 	},
+	config : {
+		global : {
+			getValue : function getValue(key, defaultValue) {
+				return chrome.extension.getBackgroundPage().getValue(key,
+						defaultValue);
+			},
+			setValue : function setValue(key, value) {
+				chrome.extension.getBackgroundPage().setValue(key, value);
+			}
+		}
+	},
 	form : {
 		requireCheck : function(styleClass) {
 			var info = {
@@ -128,7 +139,7 @@ window.util = {
 		}
 	},
 	date : {
-		getDiff : function(end, start) {
+		getDateDiff : function(end, start) {
 			var result = end.getTime() - start.getTime();
 			var days = Math.floor(result / (24 * 3600 * 1000));
 			return days;
