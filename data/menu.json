@@ -33,9 +33,14 @@
             "url":"http://192.168.10.220:28080/nexus/index.html#welcome"
         },
         {
-            "title":"Gitlab",
+            "title":"Gitlab-ZNTG",
             "icon":"gitlab.png",
             "url":"http://zn.gitlab.9ijx.com/"
+        },
+        {
+            "title":"Gitlab-JKD",
+            "icon":"gitlab.png",
+            "url":"http://gitlab.9ijx.com/"
         },
         {
             "title":"[开发]RabbitMQ",
