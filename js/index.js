@@ -188,7 +188,10 @@ $(".countdown").countdown();
 function initFavoriteList() {
 	var list = [ {
 		name : "时间的格局",
-		url : "http://www.jianshu.com/p/f72b5e7b5618"
+		url : "http://www.jianshu.com/p/dc1f1e38eda6"
+	}, {
+		name : "自由职业方向",
+		url : "http://www.jianshu.com/p/0b095637b4cb"
 	} ];
 	for ( var index in list) {
 		var a = "<a href=\"" + list[index].url + "\" target=\"_blank\">"
