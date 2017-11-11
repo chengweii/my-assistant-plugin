@@ -135,13 +135,11 @@
         {
             "title":"简书",
             "icon":"jianshu.jpg",
-            "icon-text":"WikiHow",
             "url":"http://www.jianshu.com/"
         },
         {
             "title":"JAVA知识分享网",
-            "icon":"",
-            "icon-text":"Java资料",
+            "icon":"default.png",
             "url":"http://www.java1234.com"
         }
     ],
@@ -167,8 +165,7 @@
         },
         {
             "title":"图灵机器人",
-            "icon":"",
-            "icon-text":"Robot",
+            "icon":"default.png",
             "url":"http://www.tuling123.com/"
         }
     ]
