@@ -137,6 +137,12 @@
             "icon":"jianshu.jpg",
             "icon-text":"WikiHow",
             "url":"http://www.jianshu.com/"
+        },
+        {
+            "title":"JAVA知识分享网",
+            "icon":"",
+            "icon-text":"java1234",
+            "url":"http://www.java1234.com"
         }
     ],
     "other":[

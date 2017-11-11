@@ -146,6 +146,10 @@ $(".search-btn")
 
 function renderProcessList() {
 	var goals = [ {
+		name : "￥20000/M",
+		start : "2017-11-06",
+		end : "2018-03-15"
+	}, {
 		name : "TEC",
 		start : "2017-11-06",
 		end : "2018-02-14"
@@ -157,10 +161,6 @@ function renderProcessList() {
 		name : "CALM-HOME",
 		start : "2017-11-06",
 		end : "2017-11-13"
-	}, {
-		name : "JOB-HOPPING",
-		start : "2017-11-06",
-		end : "2018-03-15"
 	} ];
 	var origin = $(".progress");
 	for ( var index in goals) {
