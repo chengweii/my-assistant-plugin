@@ -170,6 +170,9 @@ function renderProcessList() {
 		var end = util.date.stringToDate(goal.end);
 		var start = util.date.stringToDate(goal.start);
 		var leftDays = util.date.getDateDiff(end, new Date());
+		if (leftDays < 0) {
+			leftDays = 0;
+		}
 		var allDays = util.date.getDateDiff(end, start);
 		template.find(".barContent").html(
 				"Start " + goal.start + ",Finish " + goal.end
