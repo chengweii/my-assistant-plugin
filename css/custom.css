@@ -1,3 +1,8 @@
+@font-face { 
+  font-family: shenyunha; 
+  src: url('shenyunha.ttf'); 
+} 
+
 .animated {
     -webkit-animation-duration: .5s;
     animation-duration: .5s;

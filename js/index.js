@@ -135,14 +135,18 @@ $(".sync-btn").click(function() {
 
 $("body").mzDialog();
 
-$(".search-btn")
-		.click(
-				function() {
-					var word = $(".search-input").val();
-					var url = "https://www.baidu.com/s?ie=utf8&oe=utf8&tn=98010089_dg&ch=4&wd="
-							+ word;
-					util.openNewTab(url);
-				});
+function searchInput() {
+	var word = $(".search-input").val();
+	var url = "https://www.baidu.com/s?ie=utf8&oe=utf8&tn=98010089_dg&ch=4&wd="
+			+ word;
+	util.openNewTab(url);
+}
+$(".search-btn").click(searchInput);
+$("body").keydown(function(e) {
+	if (e.keyCode == 13) {
+		searchInput();
+	}
+});
 
 function renderProcessList() {
 	var goals = [ {
@@ -203,3 +207,9 @@ function initFavoriteList() {
 	}
 }
 initFavoriteList();
+
+function initMainMoto(){
+	var motoList = ["对于困难和麻烦，除了迎难而上，其他诸如忧虑、逃避的方式都只不过是在浪费自己宝贵的时间。"];
+	$(".main-moto").html(motoList[Math.floor(Math.random()*motoList.length)]);
+}
+initMainMoto();
