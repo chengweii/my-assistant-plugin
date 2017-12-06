@@ -183,7 +183,7 @@ function renderProcessList() {
 						+ ",Left <font class='left-days'>" + leftDays
 						+ "</font> day.");
 		template.find(".vader").css("width",
-				parseInt((allDays - leftDays) / allDays * 100) + "%");
+				parseInt(leftDays / allDays * 100) + "%");
 		$(".progress-container").append(template);
 		template.show();
 	}

@@ -34,7 +34,7 @@ function potato() {
 				iconUrl : 'img/icon.png',
 				title : '番茄时间结束,干的不错。',
 				message : 'Good job!',
-				imageUrl : 'img/rest.png'
+				imageUrl : 'img/timeout.jpg'
 			});
 		} else {
 			var leftTime = parseInt(potatoTime) - 5;
