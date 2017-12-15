@@ -20,6 +20,7 @@
 		"tabs",
 		"notifications",
 		"webRequest",
+		"\u003Call_urls>",
 		"webRequestBlocking",
 		"storage",
 		"http://*/*",
