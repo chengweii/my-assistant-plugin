@@ -19,6 +19,11 @@
             "title":"助手",
             "icon":"assistant.png",
             "url":"http://127.0.0.1:9898/assistant-web/"
+        },
+        {
+            "title":"MY TEC BLOG",
+            "icon":"default.png",
+            "url":"https://chengweii.github.io"
         }
     ],
     "back":[
