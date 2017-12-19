@@ -151,6 +151,11 @@
             "title":"JAVA知识<br/>分享网",
             "icon":"default.png",
             "url":"http://www.java1234.com"
+        },
+        {
+            "title":"开源中国",
+            "icon":"default.png",
+            "url":"https://www.oschina.net"
         }
     ],
     "other":[
