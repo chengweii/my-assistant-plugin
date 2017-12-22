@@ -150,21 +150,21 @@ $("body").keydown(function(e) {
 
 function renderProcessList() {
 	var goals = [ {
-		name : "￥20000/M",
-		start : "2017-11-06",
+		name : "LOSE-WEIGHT-65KG",
+		start : "2017-12-22",
+		end : "2018-02-10"
+	}, {
+		name : "20K+",
+		start : "2017-12-22",
 		end : "2018-03-15"
 	}, {
-		name : "TEC",
-		start : "2017-11-06",
-		end : "2018-02-14"
+		name : "BODY-STATE-80%",
+		start : "2017-12-22",
+		end : "2018-03-15"
 	}, {
-		name : "LOSE-WEIGHT",
-		start : "2017-11-06",
-		end : "2017-12-06"
-	}, {
-		name : "CALM-HOME",
-		start : "2017-11-06",
-		end : "2017-11-13"
+		name : "GOOD-EXPRESSION-FAST-REFLECT",
+		start : "2017-12-22",
+		end : "2018-02-15"
 	} ];
 	var origin = $(".progress");
 	for ( var index in goals) {
