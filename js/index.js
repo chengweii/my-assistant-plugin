@@ -154,7 +154,7 @@ function renderProcessList() {
 		start : "2017-12-22",
 		end : "2018-02-10"
 	}, {
-		name : "20K+",
+		name : "20+",
 		start : "2017-12-22",
 		end : "2018-03-15"
 	}, {
