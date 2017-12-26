@@ -21,9 +21,14 @@
             "url":"http://127.0.0.1:9898/assistant-web/"
         },
         {
-            "title":"MY TEC BLOG",
+            "title":"产品原型",
             "icon":"default.png",
-            "url":"https://chengweii.github.io"
+            "url":"file:///D:/Mydata/%E4%BA%A7%E5%93%81%E5%8E%9F%E5%9E%8B/"
+        },
+        {
+            "title":"接口对接",
+            "icon":"default.png",
+            "url":"file:///D:/Mydata/%E6%8E%A5%E5%8F%A3%E5%AF%B9%E6%8E%A5/"
         }
     ],
     "back":[
@@ -156,6 +161,11 @@
             "title":"开源中国",
             "icon":"openchina.jpg",
             "url":"https://www.oschina.net"
+        },
+        {
+            "title":"MY TEC BLOG",
+            "icon":"default.png",
+            "url":"https://chengweii.github.io"
         }
     ],
     "other":[
