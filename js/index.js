@@ -208,8 +208,9 @@ function initFavoriteList() {
 }
 initFavoriteList();
 
-function initMainMoto(){
-	var motoList = ["对于困难和麻烦，除了迎难而上，其他诸如忧虑、逃避的方式都只不过是在浪费自己宝贵的时间。"];
-	$(".main-moto").html(motoList[Math.floor(Math.random()*motoList.length)]);
+function initMainMoto() {
+	var motoList = [ "对于困难和麻烦，除了迎难而上，其他诸如忧虑、逃避的方式都只不过是在浪费自己宝贵的时间。",
+			"学习是一种有目的性的活动，知识本身并无属主，敬畏知识，敬畏前人，一切為我所用，才能走得更稳，走得更远。" ];
+	$(".main-moto").html(motoList[Math.floor(Math.random() * motoList.length)]);
 }
 initMainMoto();
