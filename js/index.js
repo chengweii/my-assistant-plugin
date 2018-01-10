@@ -152,19 +152,19 @@ function renderProcessList() {
 	var goals = [ {
 		name : "LOSE-WEIGHT-65KG",
 		start : "2017-12-22",
-		end : "2018-02-10"
+		end : "2018-03-10"
 	}, {
 		name : "20+",
 		start : "2017-12-22",
-		end : "2018-03-15"
+		end : "2018-04-15"
 	}, {
 		name : "BODY-STATE-80%",
 		start : "2017-12-22",
-		end : "2018-03-15"
+		end : "2018-04-15"
 	}, {
 		name : "GOOD-EXPRESSION-FAST-REFLECT",
 		start : "2017-12-22",
-		end : "2018-02-15"
+		end : "2018-03-15"
 	} ];
 	var origin = $(".progress");
 	for ( var index in goals) {
