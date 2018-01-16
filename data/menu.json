@@ -53,51 +53,6 @@
             "url":"http://gitlab.9ijx.com/"
         },
         {
-            "title":"[开发]RabbitMQ",
-            "icon":"rabbitmq.png",
-            "url":"http://192.168.5.40:15672/"
-        },
-        {
-            "title":"[测试]RabbitMQ",
-            "icon":"rabbitmq.png",
-            "url":"http://192.168.5.40:15672/"
-        },
-        {
-            "title":"[线上]RabbitMQ",
-            "icon":"rabbitmq.png",
-            "url":"http://192.168.19.158:15672/"
-        },
-        {
-            "title":"[开发]Dubbo",
-            "icon":"dubbo.png",
-            "url":"http://192.168.5.99:8080/dubbo-viewer/index.htm"
-        },
-        {
-            "title":"[测试]Dubbo",
-            "icon":"dubbo.png",
-            "url":"http://192.168.5.113:8080/dubbo-viewer/index.htm"
-        },
-        {
-            "title":"[线上]Dubbo",
-            "icon":"dubbo.png",
-            "url":"http://192.168.19.249:8020/dubbo-viewer/index.htm"
-        },
-        {
-            "title":"[开发]配置中心",
-            "icon":"configtoolkit.png",
-            "url":"http://192.168.5.99:8080/config-web/"
-        },
-        {
-            "title":"[测试]配置中心",
-            "icon":"configtoolkit.png",
-            "url":"http://192.168.5.113:8080/config-web/"
-        },
-        {
-            "title":"[线上]配置中心",
-            "icon":"configtoolkit.png",
-            "url":"http://192.168.19.249:8010/config-web/"
-        },
-        {
             "title":"Github",
             "icon":"github.png",
             "url":"https://github.com/"
