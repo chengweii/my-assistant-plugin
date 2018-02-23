@@ -84,6 +84,7 @@
 
         .title {
             margin-top: 20px;
+            display: none;
         }
 
         .title h1 {
@@ -105,6 +106,10 @@
             outline: none;
             box-shadow: none;
             padding: 9px 7px;
+        }
+
+        .search-div{
+            display: none;
         }
 
         .progress {
@@ -170,6 +175,10 @@
         .sub-title h1{
             font-size: 15px;
         }
+
+        .sync-btn{
+            display: none;
+        }
     </style>
 </head>
 
@@ -190,9 +199,9 @@
         </button>
     </div>
     <div class="row" style="text-align: center;">
-        <p class="main-moto">我真的很自豪，就像我们所有人都感到骄傲一样。</p>
+        <p class="main-moto">Loading...</p>
     </div>
-    <div class="row" style="text-align: center;">
+    <div class="row search-div" style="text-align: center;">
         <input type="text" class="search-input" maxlength="100"/> <input
             type="button" value="百度一下" class="btn search-btn"/>
         <div class="favorite-list">
