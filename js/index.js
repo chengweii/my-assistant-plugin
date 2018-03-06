@@ -234,4 +234,4 @@ function renderDocument() {
     initMainMoto();
 }
 
-setTimeout(renderDocument, 5000);
+setTimeout(renderDocument, 3000);
