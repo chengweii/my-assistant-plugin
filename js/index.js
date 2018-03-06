@@ -1,21 +1,34 @@
 window.name = "develop-assist";
 var cacheKey = "datalist";
 
-function renderDocument(){
-	function showContainer(){
+var motoList = ["对于困难和麻烦，除了迎难而上，其他诸如忧虑、逃避的方式都只不过是在浪费自己宝贵的时间。",
+    "学习是一种有目的性的活动，知识本身并无属主，敬畏知识，敬畏前人，一切為我所用，才能走得更稳，走得更远。",
+    "高手速成的秘诀就是练习，练习套路，花费10000小时去刻意练习套路。"];
+
+var favoriteList = [{
+    name: "时间的格局",
+    url: "http://www.jianshu.com/p/dc1f1e38eda6"
+}, {
+    name: "自由职业方向",
+    url: "http://www.jianshu.com/p/0b095637b4cb"
+}];
+
+function renderDocument() {
+    function showContainer() {
         $(".title").show();
         $(".sync-btn").show();
         $(".search-div").show();
     }
+
     showContainer();
 
     function syncConfig() {
         $
             .ajax({
-                type : "get",
-                url : "https://raw.githubusercontent.com/chengweii/my-assistant-plugin/master/data/menu.json",
-                cache : false,
-                success : function(data) {
+                type: "get",
+                url: "https://raw.githubusercontent.com/chengweii/my-assistant-plugin/master/data/menu.json",
+                cache: false,
+                success: function (data) {
                     var dataList = $.parseJSON(data);
                     Settings.setValue(cacheKey, data);
                     bindList(data);
@@ -37,8 +50,8 @@ function renderDocument(){
     function bindList(data) {
         $(".panel").html("");
         var dataList = $.parseJSON(data);
-        for ( var type in dataList) {
-            for ( var index in dataList[type]) {
+        for (var type in dataList) {
+            for (var index in dataList[type]) {
                 bindItem(type, dataList[type][index]);
                 toolList.push(dataList[type][index]);
             }
@@ -68,6 +81,7 @@ function renderDocument(){
     }
 
     var cacheHistoryKey = "useHistory";
+
     function recordHistory() {
         var historyData = Settings.getValue(cacheHistoryKey);
         var useHistory = {};
@@ -114,16 +128,16 @@ function renderDocument(){
         }
         var useHistory = $.parseJSON(historyData);
         var oftenList = [];
-        for ( var p in useHistory) {
+        for (var p in useHistory) {
             oftenList.push({
-                name : p,
-                value : useHistory[p]
+                name: p,
+                value: useHistory[p]
             });
         }
         var oftenListDesc = bubbleSort(oftenList);
         var i = 0
-        for ( var p in oftenListDesc) {
-            for ( var t in toolList) {
+        for (var p in oftenListDesc) {
+            for (var t in toolList) {
                 if (oftenListDesc[p].name == toolList[t].title) {
                     bindItem('often', toolList[t]);
                     break;
@@ -138,7 +152,7 @@ function renderDocument(){
 
     initConfig();
 
-    $(".sync-btn").click(function() {
+    $(".sync-btn").click(function () {
         syncConfig();
     });
 
@@ -150,33 +164,34 @@ function renderDocument(){
             + word;
         util.openNewTab(url);
     }
+
     $(".search-btn").click(searchInput);
-    $("body").keydown(function(e) {
+    $("body").keydown(function (e) {
         if (e.keyCode == 13) {
             searchInput();
         }
     });
 
     function renderProcessList() {
-        var goals = [ {
-            name : "LOSE-WEIGHT-65KG",
-            start : "2017-12-22",
-            end : "2018-03-10"
+        var goals = [{
+            name: "LOSE-WEIGHT-65KG",
+            start: "2017-12-22",
+            end: "2018-03-10"
         }, {
-            name : "20+",
-            start : "2017-12-22",
-            end : "2018-04-15"
+            name: "20+",
+            start: "2017-12-22",
+            end: "2018-04-15"
         }, {
-            name : "BODY-STATE-80%",
-            start : "2017-12-22",
-            end : "2018-04-15"
+            name: "BODY-STATE-80%",
+            start: "2017-12-22",
+            end: "2018-04-15"
         }, {
-            name : "GOOD-EXPRESSION-FAST-REFLECT",
-            start : "2017-12-22",
-            end : "2018-03-15"
-        } ];
+            name: "GOOD-EXPRESSION-FAST-REFLECT",
+            start: "2017-12-22",
+            end: "2018-03-15"
+        }];
         var origin = $(".progress");
-        for ( var index in goals) {
+        for (var index in goals) {
             var template = origin.clone();
             var goal = goals[index];
             template.find(".barTitle").html(goal.name);
@@ -197,32 +212,26 @@ function renderDocument(){
             template.show();
         }
     }
+
     renderProcessList();
 
     $(".countdown").countdown();
 
     function initFavoriteList() {
-        var list = [ {
-            name : "时间的格局",
-            url : "http://www.jianshu.com/p/dc1f1e38eda6"
-        }, {
-            name : "自由职业方向",
-            url : "http://www.jianshu.com/p/0b095637b4cb"
-        } ];
-        for ( var index in list) {
-            var a = "<a href=\"" + list[index].url + "\" target=\"_blank\">"
-                + list[index].name + "</a>";
+        for (var index in favoriteList) {
+            var a = "<a href=\"" + favoriteList[index].url + "\" target=\"_blank\">"
+                + favoriteList[index].name + "</a>";
             $(".favorite-list").append(a);
         }
     }
+
     initFavoriteList();
 
     function initMainMoto() {
-        var motoList = [ "对于困难和麻烦，除了迎难而上，其他诸如忧虑、逃避的方式都只不过是在浪费自己宝贵的时间。",
-            "学习是一种有目的性的活动，知识本身并无属主，敬畏知识，敬畏前人，一切為我所用，才能走得更稳，走得更远。" ];
         $(".main-moto").html(motoList[Math.floor(Math.random() * motoList.length)]);
     }
+
     initMainMoto();
 }
 
-setTimeout(renderDocument,5000);
+setTimeout(renderDocument, 5000);
