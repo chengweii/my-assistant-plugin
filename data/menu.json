@@ -126,6 +126,11 @@
             "title":"MY TEC BLOG",
             "icon":"default.png",
             "url":"https://chengweii.github.io"
+        },
+        {
+            "title":"JAVA<br/>CodeGeeks",
+            "icon":"default.png",
+            "url":"https://www.javacodegeeks.com"
         }
     ],
     "other":[
