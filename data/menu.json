@@ -131,6 +131,11 @@
             "title":"JAVA<br/>CodeGeeks",
             "icon":"javacodegeek.png",
             "url":"https://www.javacodegeeks.com"
+        },
+        {
+            "title":"文档库",
+            "icon":"default.png",
+            "url":"http://www.useit.com.cn"
         }
     ],
     "other":[
