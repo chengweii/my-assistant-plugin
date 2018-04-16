@@ -167,6 +167,11 @@
             "title":"网络访问测试",
             "icon":"default.png",
             "url":"https://www.17ce.com/"
+        },
+        {
+            "title":"墨刀",
+            "icon":"modao.png",
+            "url":"https://modao.cc/"
         }
     ]
 }
