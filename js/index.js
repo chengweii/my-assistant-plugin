@@ -181,20 +181,20 @@ function renderDocument() {
     function renderProcessList() {
         var goals = [{
             name: "LOSE-WEIGHT-65KG",
-            start: "2017-12-22",
-            end: "2018-03-10"
+            start: "2018-04-17",
+            end: "2018-06-17"
         }, {
             name: "20+",
-            start: "2017-12-22",
-            end: "2018-04-15"
+            start: "2018-04-17",
+            end: "2018-06-17"
         }, {
             name: "BODY-STATE-80%",
-            start: "2017-12-22",
-            end: "2018-04-15"
+            start: "2018-04-17",
+            end: "2018-06-17"
         }, {
             name: "GOOD-EXPRESSION-FAST-REFLECT",
-            start: "2017-12-22",
-            end: "2018-03-15"
+            start: "2018-04-17",
+            end: "2018-06-17"
         }];
         var origin = $(".progress");
         for (var index in goals) {
