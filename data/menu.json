@@ -89,6 +89,22 @@
             "title":"Photoshop",
             "icon":"photoshop.png",
             "url":"http://www.uupoop.com"
+        },
+        {
+            "title":"网络访问测试",
+            "icon":"17ce.png",
+            "url":"https://www.17ce.com/"
+        },
+        {
+            "title":"在线开发工具",
+            "icon":"",
+            "icon-text":"TOOL",
+            "url":"http://web.chacuo.net/"
+        },
+        {
+            "title":"墨刀",
+            "icon":"modao.png",
+            "url":"https://modao.cc/"
         }
     ],
     "technology":[
@@ -136,6 +152,11 @@
             "title":"文档库",
             "icon":"default.png",
             "url":"http://www.useit.com.cn"
+        },
+        {
+            "title":"Ali博客",
+            "icon":"aliblog.png",
+            "url":"http://jm.taobao.org"
         }
     ],
     "other":[
@@ -153,25 +174,9 @@
             "url":"https://pan.baidu.com"
         },
         {
-            "title":"在线开发工具",
-            "icon":"",
-            "icon-text":"TOOL",
-            "url":"http://web.chacuo.net/"
-        },
-        {
             "title":"图灵机器人",
             "icon":"default.png",
             "url":"http://www.tuling123.com/"
-        },
-        {
-            "title":"网络访问测试",
-            "icon":"default.png",
-            "url":"https://www.17ce.com/"
-        },
-        {
-            "title":"墨刀",
-            "icon":"modao.png",
-            "url":"https://modao.cc/"
         }
     ]
 }
