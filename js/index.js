@@ -180,6 +180,10 @@ function renderDocument() {
         }
     });
 
+    $(".texteditor-btn").click(function(){
+        window.open(chrome.extension.getURL('text-editor.html'), "text-editor");
+    });
+
     function renderProcessList() {
         var goals = [{
             name: "LOSE-WEIGHT-65KG",
