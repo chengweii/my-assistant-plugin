@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>临时文本编辑器</title>
+    <title>临时记事本</title>
     <meta charset="utf-8"/>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" href="css/custom.css" type="text/css"/>
@@ -11,13 +11,90 @@
     <script type="text/javascript" src="js/lib/settings.js"></script>
     <script type="text/javascript" src="js/texteditor.js"></script>
     <style>
+        .editor-container{
+            width:100%;
+        }
+        .editor-container .editor-list{
+            display: none;
+            width:15%;
+            float: left;
+        }
+        .editor-container .editor-list-box{
+            margin-right:10px;
+        }
+        .editor-container .editor-markdown{
+            width:100%;
+            float: left;
+        }
+        .editor-container hr {
+            margin: 0px;
+            margin-bottom: 5px;
+            border: 0;
+            border-top: 1px solid #eee;
+        }
+        .editor-container h5 {
+            color: gray;
+            margin: 0px;
+            padding: 0px;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+        .editor-container a{
+            color: #666;
+            text-decoration: none;
+            padding:3px;
+            line-height: 25px;
+            border-radius: 5px;
+        }
+        .editor-container h5 a:focus, .editor-container a:hover {
+            background-color: #F5F5F5;
+            color: #666;
+        }
+        .editor-container .catalog-body {
+            position: relative;
+            list-style: none;
+            height: auto;
+            overflow: hidden;
+            padding-left: 5px;
+            padding-right: 5px;
+            text-indent: 0;
+        }
+        .editor-container .catalog-body .h1_nav, .editor-container .catalog-body .h2_nav, .editor-container .catalog-body .h3_nav {
+            margin-left: 0;
+            font-size: 12px;
+            font-weight: 700;
+        }
     </style>
 </head>
 
 <body>
-    <div id="test-editormd">
-        <textarea style="display:none;"></textarea>
+    <div class="editor-container">
+        <div class="editor-list">
+            <div class="editor-list-box">
+                <h5 id="catalog">
+                    <a class="catalog-toggle" href="#">记事清单</a>
+                </h5>
+                <hr class="hidden-sm hidden-xs">
+                <ul class="catalog-body">
+                    <li class="h1_nav">
+                        <a href="#2018/05/30" rel="nofollow">2018/05/30</a>
+                    </li>
+                    <li class="h1_nav">
+                        <a href="#2018/05/31" rel="nofollow">2018/05/31</a>
+                    </li>
+                    <li class="h1_nav">
+                        <a href="#2018/06/01" rel="nofollow">2018/06/01</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="editor-markdown">
+            <div id="test-editormd">
+                <textarea style="display:none;"></textarea>
+            </div>
+        </div>
     </div>
+
 </body>
 
 </html>
