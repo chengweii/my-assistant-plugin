@@ -9,21 +9,24 @@
     <script type="text/javascript" src="js/lib/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="js/texteditor/editormd.min.js"></script>
     <script type="text/javascript" src="js/lib/settings.js"></script>
+    <script type="text/javascript" src="js/lib/util.js"></script>
     <script type="text/javascript" src="js/texteditor.js"></script>
     <style>
+        .editormd{
+            margin-bottom: 0px;
+        }
         .editor-container{
             width:100%;
         }
         .editor-container .editor-list{
-            display: none;
-            width:15%;
+            width:10%;
             float: left;
         }
         .editor-container .editor-list-box{
             margin-right:10px;
         }
         .editor-container .editor-markdown{
-            width:100%;
+            width:90%;
             float: left;
         }
         .editor-container hr {
@@ -48,7 +51,11 @@
         }
         .editor-container h5 a:focus, .editor-container a:hover {
             background-color: #F5F5F5;
-            color: #666;
+        }
+        .editor-container .catalog-toggle{
+            font-family: shenyunha;
+            font-size: 18px;
+            font-weight: bold;
         }
         .editor-container .catalog-body {
             position: relative;
@@ -58,11 +65,16 @@
             padding-left: 5px;
             padding-right: 5px;
             text-indent: 0;
+            overflow-y: auto;
         }
         .editor-container .catalog-body .h1_nav, .editor-container .catalog-body .h2_nav, .editor-container .catalog-body .h3_nav {
             margin-left: 0;
             font-size: 12px;
             font-weight: 700;
+            font-family: '微软雅黑';
+        }
+        .editor-container .catalog-body .selected a{
+            background-color: #dedede;
         }
     </style>
 </head>
@@ -72,19 +84,10 @@
         <div class="editor-list">
             <div class="editor-list-box">
                 <h5 id="catalog">
-                    <a class="catalog-toggle" href="#">记事清单</a>
+                    <a class="catalog-toggle" href="#">临时记事清单</a>
                 </h5>
                 <hr class="hidden-sm hidden-xs">
                 <ul class="catalog-body">
-                    <li class="h1_nav">
-                        <a href="#2018/05/30" rel="nofollow">2018/05/30</a>
-                    </li>
-                    <li class="h1_nav">
-                        <a href="#2018/05/31" rel="nofollow">2018/05/31</a>
-                    </li>
-                    <li class="h1_nav">
-                        <a href="#2018/06/01" rel="nofollow">2018/06/01</a>
-                    </li>
                 </ul>
             </div>
         </div>
