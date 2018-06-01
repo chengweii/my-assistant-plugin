@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>临时记事本</title>
+    <title>Notepad</title>
     <meta charset="utf-8"/>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" href="css/custom.css" type="text/css"/>
@@ -17,16 +17,18 @@
         }
         .editor-container{
             width:100%;
+            min-width:1316px;
         }
         .editor-container .editor-list{
-            width:10%;
+            min-width:155px;
+            width:12%;
             float: left;
         }
         .editor-container .editor-list-box{
             margin-right:10px;
         }
         .editor-container .editor-markdown{
-            width:90%;
+            width:88%;
             float: left;
         }
         .editor-container hr {
@@ -53,7 +55,7 @@
             background-color: #F5F5F5;
         }
         .editor-container .catalog-toggle{
-            font-family: shenyunha;
+            font-family: 'Georgia';
             font-size: 18px;
             font-weight: bold;
         }
@@ -69,9 +71,9 @@
         }
         .editor-container .catalog-body .h1_nav, .editor-container .catalog-body .h2_nav, .editor-container .catalog-body .h3_nav {
             margin-left: 0;
-            font-size: 12px;
+            font-size: 9px;
             font-weight: 700;
-            font-family: '微软雅黑';
+            font-family: 'Georgia';
         }
         .editor-container .catalog-body .selected a{
             background-color: #dedede;
@@ -84,7 +86,7 @@
         <div class="editor-list">
             <div class="editor-list-box">
                 <h5 id="catalog">
-                    <a class="catalog-toggle" href="#">临时记事清单</a>
+                    <a class="catalog-toggle" href="#">Record List</a>
                 </h5>
                 <hr class="hidden-sm hidden-xs">
                 <ul class="catalog-body">

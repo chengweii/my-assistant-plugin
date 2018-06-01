@@ -25,7 +25,7 @@ function init() {
         li.attr("value", fileName);
         var a = li.find("a");
         a.attr("href", "#" + fileName);
-        a.html("记录[" + fileName + "]");
+        a.html("Record[" + fileName + "]");
         li.click(function () {
             showTextByFileName(this);
         });
