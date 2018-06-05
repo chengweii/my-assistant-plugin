@@ -2,6 +2,7 @@ var currentDate = (new Date()).format('yyyy-MM-dd');
 var fileNameKeyPrefix = "textEditorContent_";
 var historyFilesKey = "textEditorHistory";
 var textEditor;
+var emptyContent = "没有记录";
 
 function init() {
     var historyFiles = Settings.getObject(historyFilesKey);
@@ -42,7 +43,7 @@ function showTextByFileName(that) {
     $(".editor-container .editor-list ul li").removeClass("selected");
     $(that).addClass("selected");
     var content = Settings.getValue(getFileNameKey());
-    textEditor.setValue(content);
+    textEditor.setValue(content ? content : emptyContent);
 }
 
 function resizeHeight() {
@@ -64,6 +65,13 @@ $(function () {
         path: "./js/",
         onchange: function () {
             content = this.getValue();
+            if (content == emptyContent) {
+                return;
+            }
+            var oldContent = Settings.getValue(getFileNameKey());
+            if (content == oldContent) {
+                return;
+            }
             console.log("onchange =>", content);
             Settings.setValue(getFileNameKey(), content);
         }
