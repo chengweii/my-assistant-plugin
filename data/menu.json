@@ -53,11 +53,6 @@
             "url":"http://gitlab.9ijx.com/"
         },
         {
-            "title":"Github",
-            "icon":"github.png",
-            "url":"https://github.com/"
-        },
-        {
             "title":"Maven",
             "icon":"maven.png",
             "url":"http://mvnrepository.com/tags/maven"
@@ -117,6 +112,16 @@
             "title":"CSDN",
             "icon":"csdn.png",
             "url":"http://www.csdn.net/"
+        },
+        {
+            "title":"码云",
+            "icon":"default.png",
+            "url":"https://gitee.com/"
+        },
+        {
+            "title":"Github",
+            "icon":"github.png",
+            "url":"https://github.com/"
         },
         {
             "title":"WikiHow",
