@@ -84,7 +84,6 @@
 
         .title {
             margin-top: 20px;
-            display: none;
         }
 
         .title h1 {
@@ -176,6 +175,19 @@
             font-size: 15px;
         }
 
+        .sub-panel a{
+            width: 45px;
+        }
+
+        .sub-panel a span{
+            height: 45px;
+            line-height: 45px;
+        }
+
+        .sub-panel a i{
+            font-size: 12px;
+        }
+
         .sync-btn{
             display: none;
         }
@@ -196,16 +208,16 @@
         </button>
     </div>
     <div class="row" style="text-align: center;">
-        <p class="main-moto">Loading...</p>
+        <p class="main-moto"  style="display:none;">Loading...</p>
     </div>
     <div class="row search-div" style="text-align: center;">
         <input type="text" class="search-input" maxlength="100"/> <input
             type="button" value="百度一下" class="btn search-btn"/>
-        <div class="favorite-list">
+        <div class="favorite-list"  style="display:none;">
         </div>
     </div>
     <div class="row" style="margin-top: 20px; margin-bottom: 20px;">
-        <div class="col-4 progress-container">
+        <div class="col-4 progress-container" style="display:none;">
             <div class="progress" style="display: none;">
                 <div class="barTitle" style="text-align: left;"></div>
                 <span class="barControl"><div class="barContro_space">
@@ -218,30 +230,12 @@
         </div>
     </div>
     <div style="clear: both;"></div>
-    <div class="title">
-        <h1>COMMON LIST</h1>
+    <div class="row collectedSites" style="margin-top: 20px; margin-bottom: 20px;">
+        <div class="title">
+            <h1>常用站点</h1>
+        </div>
+        <div class="site-list-999999 panel"></div>
     </div>
-    <div class="often-list panel"></div>
-    <div class="title sub-title" style="margin-top: 50px;">
-        <h1>DAILY WORK</h1>
-    </div>
-    <div class="work-list panel"></div>
-    <div class="title sub-title">
-        <h1>BACK DEVELOP</h1>
-    </div>
-    <div class="back-list panel"></div>
-    <div class="title sub-title">
-        <h1>FRONT DEVELOP</h1>
-    </div>
-    <div class="front-list panel"></div>
-    <div class="title sub-title">
-        <h1>COMMON WEBSITE</h1>
-    </div>
-    <div class="technology-list panel"></div>
-    <div class="title sub-title">
-        <h1>OTHER</h1>
-    </div>
-    <div class="other-list panel"></div>
 </div>
 <a target="_blank" href="#" class="template" style="display: none;">
     <span></span> <i></i>

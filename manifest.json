@@ -1,8 +1,8 @@
 {
 	"manifest_version": 2,
-	"name": "MY HOME SERVICE",
+	"name": "我的主页",
 	"version": "1.0.0",
-	"description": "MY HOME SERVICE",
+	"description": "个人常用站点、工具集合",
 	"icons": {
 		"16": "img/icon.png",
 		"48": "img/icon.png",
@@ -13,7 +13,7 @@
 	},
 	"browser_action": {
 		"default_icon": "img/icon.png",
-		"default_title": "MY HOME SERVICE"
+		"default_title": "我的主页"
 	},
 	"permissions": [
 		"contextMenus",
