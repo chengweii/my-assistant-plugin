@@ -146,6 +146,8 @@ function renderDocument() {
     initConfig();
 
     $(".sync-btn").click(function () {
+        window.open(chrome.extension.getURL('config.html'), "config");
+        return;
         //syncConfig();
         var configDataTemplate = {
             remindingOfRest: {
@@ -351,9 +353,10 @@ function renderDocument() {
                 index = 0;
             }
             $(".main-moto").html(motoList[index]);
+            $(".main-moto").hide().fadeIn(1000);
         };
         showList();
-        setInterval(showList, 20000);
+        setInterval(showList, 30000);
 
         $(".main-moto").show();
     }

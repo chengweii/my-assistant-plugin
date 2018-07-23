@@ -1,18 +1,162 @@
 <html>
 
 <head>
-<title>MY HOME PAGE</title>
-<meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" href="css/custom.css" type="text/css" />
-<script type="text/javascript" src="js/lib/jquery-3.2.1.min.js"></script>
-<script type="text/javascript" src="js/lib/settings.js"></script>
-<script type="text/javascript" src="js/lib/dialog.js"></script>
-<script type="text/javascript" src="js/lib/util.js"></script>
+    <title>我的主页-配置</title>
+    <meta charset="utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="css/custom.css" type="text/css"/>
+    <script type="text/javascript" src="js/lib/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/lib/settings.js"></script>
+    <script type="text/javascript" src="js/lib/dialog.js"></script>
+    <script type="text/javascript" src="js/lib/util.js"></script>
+    <style>
+        .row {
+            clear: both;
+            padding-bottom: 10px;
+        }
+
+        .title {
+            border-bottom: 2px solid #7a7776;
+            margin-top: 0px;
+        }
+
+        .title .icon {
+            font-size: 15px;
+            padding-right: 5px;
+        }
+
+        .title h1 {
+            font-size: 15px;
+            display: inline-block;
+        }
+
+        .row2 .form-control {
+            width: 285px;
+        }
+
+        .row2 .form-input {
+            width: 228px;
+        }
+
+        .row6 {
+            text-align: center;
+            padding-top: 20px;
+        }
+    </style>
 </head>
 
 <body>
-	<script type="text/javascript" src="js/background.js"></script>
+<script type="text/javascript" src="js/config.js"></script>
+<div class="row row1">
+    <div class="title">
+        <svg class="icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;"
+             viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="853">
+            <path d="M 954.182 395.636 h -46.592 v 605.044 h -93.0909 V 395.636 H 768 a 46.5455 46.5455 0 0 1 -46.5455 -46.5455 v -46.5455 a 46.5455 46.5455 0 0 1 46.5455 -46.5455 h 186.182 a 46.5455 46.5455 0 0 1 46.5455 46.5455 v 46.5455 a 46.5455 46.5455 0 0 1 -46.5455 46.5455 Z M 814.499 23.2262 h 93.0909 v 186.182 h -93.0909 v -186.182 Z M 628.364 768 h -46.592 v 232.681 H 488.727 V 768 H 442.182 a 46.5455 46.5455 0 0 1 -46.5455 -46.5455 v -46.5455 a 46.5455 46.5455 0 0 1 46.5455 -46.5455 h 186.182 a 46.5455 46.5455 0 0 1 46.5455 46.5455 v 46.5455 a 46.5455 46.5455 0 0 1 -46.5455 46.5455 Z M 488.727 23.2262 h 93.0444 V 581.818 H 488.727 V 23.2262 Z M 256 535.273 H 209.455 v 465.408 H 116.364 V 535.273 H 69.8182 a 46.5455 46.5455 0 0 1 -46.5455 -46.5455 v -46.5455 a 46.5455 46.5455 0 0 1 46.5455 -46.5455 h 186.182 a 46.5455 46.5455 0 0 1 46.5455 46.5455 v 46.5455 a 46.5455 46.5455 0 0 1 -46.5455 46.5455 Z M 116.364 23.2262 h 93.0909 v 325.818 H 116.364 v -325.818 Z"
+                  fill="#2c2c2c" p-id="854"></path>
+        </svg>
+        <h1>休息提醒器</h1>
+    </div>
+    <div class="row" style="margin-top: 20px; margin-bottom: 20px;">
+        <div class="form-control" style="width:100px;">
+            <div class="onoffswitch">
+                <input type="checkbox" name="remindingOfRestSwitch" class="onoffswitch-checkbox"
+                       id="remindingOfRestSwitch" checked>
+                <label class="onoffswitch-label" for="remindingOfRestSwitch">
+                    <span class="onoffswitch-inner"></span>
+                    <span class="onoffswitch-switch"></span>
+                </label>
+            </div>
+        </div>
+        <div class="form-control">
+            <label class="form-label">休息提醒时间：</label>
+            <input type="text" class="form-input" placeholder="整点提醒，设置参考：9,16,22...">
+        </div>
+    </div>
+</div>
+
+<div class="row row2">
+    <div class="title">
+        <svg class="icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;"
+             viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="853">
+            <path d="M 954.182 395.636 h -46.592 v 605.044 h -93.0909 V 395.636 H 768 a 46.5455 46.5455 0 0 1 -46.5455 -46.5455 v -46.5455 a 46.5455 46.5455 0 0 1 46.5455 -46.5455 h 186.182 a 46.5455 46.5455 0 0 1 46.5455 46.5455 v 46.5455 a 46.5455 46.5455 0 0 1 -46.5455 46.5455 Z M 814.499 23.2262 h 93.0909 v 186.182 h -93.0909 v -186.182 Z M 628.364 768 h -46.592 v 232.681 H 488.727 V 768 H 442.182 a 46.5455 46.5455 0 0 1 -46.5455 -46.5455 v -46.5455 a 46.5455 46.5455 0 0 1 46.5455 -46.5455 h 186.182 a 46.5455 46.5455 0 0 1 46.5455 46.5455 v 46.5455 a 46.5455 46.5455 0 0 1 -46.5455 46.5455 Z M 488.727 23.2262 h 93.0444 V 581.818 H 488.727 V 23.2262 Z M 256 535.273 H 209.455 v 465.408 H 116.364 V 535.273 H 69.8182 a 46.5455 46.5455 0 0 1 -46.5455 -46.5455 v -46.5455 a 46.5455 46.5455 0 0 1 46.5455 -46.5455 h 186.182 a 46.5455 46.5455 0 0 1 46.5455 46.5455 v 46.5455 a 46.5455 46.5455 0 0 1 -46.5455 46.5455 Z M 116.364 23.2262 h 93.0909 v 325.818 H 116.364 v -325.818 Z"
+                  fill="#2c2c2c" p-id="854"></path>
+        </svg>
+        <h1>目标进度条</h1>
+    </div>
+    <div class="row" style="margin-top: 20px; margin-bottom: 20px;">
+        <div class="form-control" style="width:100px;">
+            <div class="onoffswitch">
+                <input type="checkbox" name="goalsProcessSwitch" class="onoffswitch-checkbox" id="goalsProcessSwitch"
+                       checked>
+                <label class="onoffswitch-label" for="goalsProcessSwitch">
+                    <span class="onoffswitch-inner"></span>
+                    <span class="onoffswitch-switch"></span>
+                </label>
+            </div>
+        </div>
+        <div class="form-control">
+            <label class="form-label">目标1：</label>
+            <input type="text" class="form-input" placeholder="参考：目标1#2018-07-01#2018-12-01">
+        </div>
+        <div class="form-control">
+            <label class="form-label">目标2：</label>
+            <input type="text" class="form-input" placeholder="参考：目标2#2018-07-01#2018-12-01">
+        </div>
+        <div class="form-control">
+            <label class="form-label">目标3：</label>
+            <input type="text" class="form-input" placeholder="参考：目标3#2018-07-01#2018-12-01">
+        </div>
+        <div class="form-control">
+            <label class="form-label">目标4：</label>
+            <input type="text" class="form-input" placeholder="参考：目标4#2018-07-01#2018-12-01">
+        </div>
+    </div>
+</div>
+
+<div class="row row3">
+    <div class="title">
+        <svg class="icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;"
+             viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="853">
+            <path d="M 954.182 395.636 h -46.592 v 605.044 h -93.0909 V 395.636 H 768 a 46.5455 46.5455 0 0 1 -46.5455 -46.5455 v -46.5455 a 46.5455 46.5455 0 0 1 46.5455 -46.5455 h 186.182 a 46.5455 46.5455 0 0 1 46.5455 46.5455 v 46.5455 a 46.5455 46.5455 0 0 1 -46.5455 46.5455 Z M 814.499 23.2262 h 93.0909 v 186.182 h -93.0909 v -186.182 Z M 628.364 768 h -46.592 v 232.681 H 488.727 V 768 H 442.182 a 46.5455 46.5455 0 0 1 -46.5455 -46.5455 v -46.5455 a 46.5455 46.5455 0 0 1 46.5455 -46.5455 h 186.182 a 46.5455 46.5455 0 0 1 46.5455 46.5455 v 46.5455 a 46.5455 46.5455 0 0 1 -46.5455 46.5455 Z M 488.727 23.2262 h 93.0444 V 581.818 H 488.727 V 23.2262 Z M 256 535.273 H 209.455 v 465.408 H 116.364 V 535.273 H 69.8182 a 46.5455 46.5455 0 0 1 -46.5455 -46.5455 v -46.5455 a 46.5455 46.5455 0 0 1 46.5455 -46.5455 h 186.182 a 46.5455 46.5455 0 0 1 46.5455 46.5455 v 46.5455 a 46.5455 46.5455 0 0 1 -46.5455 46.5455 Z M 116.364 23.2262 h 93.0909 v 325.818 H 116.364 v -325.818 Z"
+                  fill="#2c2c2c" p-id="854"></path>
+        </svg>
+        <h1>目标进度条</h1>
+    </div>
+    <div class="row" style="margin-top: 20px; margin-bottom: 20px;">
+        <div class="form-control" style="width:100px;">
+            <div class="onoffswitch">
+                <input type="checkbox" name="goalsProcessSwitch" class="onoffswitch-checkbox" id="goalsProcessSwitch"
+                       checked>
+                <label class="onoffswitch-label" for="goalsProcessSwitch">
+                    <span class="onoffswitch-inner"></span>
+                    <span class="onoffswitch-switch"></span>
+                </label>
+            </div>
+        </div>
+        <div class="form-control">
+            <label class="form-label">目标1：</label>
+            <input type="text" class="form-input" placeholder="参考：目标1#2018-07-01#2018-12-01">
+        </div>
+        <div class="form-control">
+            <label class="form-label">目标2：</label>
+            <input type="text" class="form-input" placeholder="参考：目标2#2018-07-01#2018-12-01">
+        </div>
+        <div class="form-control">
+            <label class="form-label">目标3：</label>
+            <input type="text" class="form-input" placeholder="参考：目标3#2018-07-01#2018-12-01">
+        </div>
+        <div class="form-control">
+            <label class="form-label">目标4：</label>
+            <input type="text" class="form-input" placeholder="参考：目标4#2018-07-01#2018-12-01">
+        </div>
+    </div>
+</div>
+
+<div class="row row6">
+    <button type="button" rel="tooltip" title="保存配置后立刻生效" class="btn save-btn">
+        保存配置
+    </button>
+</div>
 </body>
 
 </html>
