@@ -49,6 +49,9 @@ function potato() {
 }
 
 function remind() {
+    if(!chrome.extension.getBackgroundPage()){
+        return;
+    }
     remindingOfRest();
     potato();
 }

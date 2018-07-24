@@ -38,16 +38,54 @@
             width: 228px;
         }
 
+        .row3 .form-control {
+            width: 285px;
+        }
+
+        .row3 .form-input {
+            width: 228px;
+        }
+
         .row6 {
             text-align: center;
             padding-top: 20px;
+        }
+
+        .input-row{
+            display:none;
+        }
+
+        .all-config{
+            display: block;
+        }
+
+        .json-config{
+            font-family: "Microsoft YaHei", Helvetica, "Meiryo UI", "Malgun Gothic", "Segoe UI", "Trebuchet MS", "Monaco", monospace, Tahoma, STXihei, "华文细黑", STHeiti, "Helvetica Neue", "Droid Sans", "wenquanyi micro hei", FreeSans, Arimo, Arial, SimSun, "宋体", Heiti, "黑体", sans-serif;
         }
     </style>
 </head>
 
 <body>
-<script type="text/javascript" src="js/config.js"></script>
-<div class="row row1">
+<div class="row all-config row0">
+    <div class="title">
+        <svg class="icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;"
+             viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="853">
+            <path d="M 954.182 395.636 h -46.592 v 605.044 h -93.0909 V 395.636 H 768 a 46.5455 46.5455 0 0 1 -46.5455 -46.5455 v -46.5455 a 46.5455 46.5455 0 0 1 46.5455 -46.5455 h 186.182 a 46.5455 46.5455 0 0 1 46.5455 46.5455 v 46.5455 a 46.5455 46.5455 0 0 1 -46.5455 46.5455 Z M 814.499 23.2262 h 93.0909 v 186.182 h -93.0909 v -186.182 Z M 628.364 768 h -46.592 v 232.681 H 488.727 V 768 H 442.182 a 46.5455 46.5455 0 0 1 -46.5455 -46.5455 v -46.5455 a 46.5455 46.5455 0 0 1 46.5455 -46.5455 h 186.182 a 46.5455 46.5455 0 0 1 46.5455 46.5455 v 46.5455 a 46.5455 46.5455 0 0 1 -46.5455 46.5455 Z M 488.727 23.2262 h 93.0444 V 581.818 H 488.727 V 23.2262 Z M 256 535.273 H 209.455 v 465.408 H 116.364 V 535.273 H 69.8182 a 46.5455 46.5455 0 0 1 -46.5455 -46.5455 v -46.5455 a 46.5455 46.5455 0 0 1 46.5455 -46.5455 h 186.182 a 46.5455 46.5455 0 0 1 46.5455 46.5455 v 46.5455 a 46.5455 46.5455 0 0 1 -46.5455 46.5455 Z M 116.364 23.2262 h 93.0909 v 325.818 H 116.364 v -325.818 Z"
+                  fill="#2c2c2c" p-id="854"></path>
+        </svg>
+        <h1>配置信息</h1>
+    </div>
+    <div class="row" style="margin-top: 20px; margin-bottom: 20px;text-align: center;">
+        <div class="form-control" style="width:100%;">
+            <textarea class="form-input json-config" placeholder="" style="width:100%;height:588px;margin-bottom:10px;"></textarea>
+        </div>
+        <button type="button" rel="tooltip" title="保存配置后立刻生效" class="btn load-btn">
+            保存配置
+        </button>
+    </div>
+</div>
+
+<div class="row input-row row1">
     <div class="title">
         <svg class="icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;"
              viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="853">
@@ -74,7 +112,7 @@
     </div>
 </div>
 
-<div class="row row2">
+<div class="row input-row row2">
     <div class="title">
         <svg class="icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;"
              viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="853">
@@ -113,50 +151,105 @@
     </div>
 </div>
 
-<div class="row row3">
+<div class="row input-row row3">
     <div class="title">
         <svg class="icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;"
              viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="853">
             <path d="M 954.182 395.636 h -46.592 v 605.044 h -93.0909 V 395.636 H 768 a 46.5455 46.5455 0 0 1 -46.5455 -46.5455 v -46.5455 a 46.5455 46.5455 0 0 1 46.5455 -46.5455 h 186.182 a 46.5455 46.5455 0 0 1 46.5455 46.5455 v 46.5455 a 46.5455 46.5455 0 0 1 -46.5455 46.5455 Z M 814.499 23.2262 h 93.0909 v 186.182 h -93.0909 v -186.182 Z M 628.364 768 h -46.592 v 232.681 H 488.727 V 768 H 442.182 a 46.5455 46.5455 0 0 1 -46.5455 -46.5455 v -46.5455 a 46.5455 46.5455 0 0 1 46.5455 -46.5455 h 186.182 a 46.5455 46.5455 0 0 1 46.5455 46.5455 v 46.5455 a 46.5455 46.5455 0 0 1 -46.5455 46.5455 Z M 488.727 23.2262 h 93.0444 V 581.818 H 488.727 V 23.2262 Z M 256 535.273 H 209.455 v 465.408 H 116.364 V 535.273 H 69.8182 a 46.5455 46.5455 0 0 1 -46.5455 -46.5455 v -46.5455 a 46.5455 46.5455 0 0 1 46.5455 -46.5455 h 186.182 a 46.5455 46.5455 0 0 1 46.5455 46.5455 v 46.5455 a 46.5455 46.5455 0 0 1 -46.5455 46.5455 Z M 116.364 23.2262 h 93.0909 v 325.818 H 116.364 v -325.818 Z"
                   fill="#2c2c2c" p-id="854"></path>
         </svg>
-        <h1>目标进度条</h1>
+        <h1>精华文章</h1>
     </div>
     <div class="row" style="margin-top: 20px; margin-bottom: 20px;">
         <div class="form-control" style="width:100px;">
             <div class="onoffswitch">
-                <input type="checkbox" name="goalsProcessSwitch" class="onoffswitch-checkbox" id="goalsProcessSwitch"
+                <input type="checkbox" name="favoriteArticlesSwitch" class="onoffswitch-checkbox" id="favoriteArticlesSwitch"
                        checked>
-                <label class="onoffswitch-label" for="goalsProcessSwitch">
+                <label class="onoffswitch-label" for="favoriteArticlesSwitch">
                     <span class="onoffswitch-inner"></span>
                     <span class="onoffswitch-switch"></span>
                 </label>
             </div>
         </div>
         <div class="form-control">
-            <label class="form-label">目标1：</label>
-            <input type="text" class="form-input" placeholder="参考：目标1#2018-07-01#2018-12-01">
+            <label class="form-label">文章1：</label>
+            <input type="text" class="form-input" placeholder="参考：文章1#http://.../dc1f1e38eda6">
         </div>
         <div class="form-control">
-            <label class="form-label">目标2：</label>
-            <input type="text" class="form-input" placeholder="参考：目标2#2018-07-01#2018-12-01">
+            <label class="form-label">文章2：</label>
+            <input type="text" class="form-input" placeholder="参考：文章2#http://.../dc1f1e38eda6">
         </div>
         <div class="form-control">
-            <label class="form-label">目标3：</label>
-            <input type="text" class="form-input" placeholder="参考：目标3#2018-07-01#2018-12-01">
+            <label class="form-label">文章3：</label>
+            <input type="text" class="form-input" placeholder="参考：文章3#http://.../dc1f1e38eda6">
         </div>
         <div class="form-control">
-            <label class="form-label">目标4：</label>
-            <input type="text" class="form-input" placeholder="参考：目标4#2018-07-01#2018-12-01">
+            <label class="form-label">文章4：</label>
+            <input type="text" class="form-input" placeholder="参考：文章4#http://.../dc1f1e38eda6">
         </div>
     </div>
 </div>
 
-<div class="row row6">
+<div class="row input-row row4">
+    <div class="title">
+        <svg class="icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;"
+             viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="853">
+            <path d="M 954.182 395.636 h -46.592 v 605.044 h -93.0909 V 395.636 H 768 a 46.5455 46.5455 0 0 1 -46.5455 -46.5455 v -46.5455 a 46.5455 46.5455 0 0 1 46.5455 -46.5455 h 186.182 a 46.5455 46.5455 0 0 1 46.5455 46.5455 v 46.5455 a 46.5455 46.5455 0 0 1 -46.5455 46.5455 Z M 814.499 23.2262 h 93.0909 v 186.182 h -93.0909 v -186.182 Z M 628.364 768 h -46.592 v 232.681 H 488.727 V 768 H 442.182 a 46.5455 46.5455 0 0 1 -46.5455 -46.5455 v -46.5455 a 46.5455 46.5455 0 0 1 46.5455 -46.5455 h 186.182 a 46.5455 46.5455 0 0 1 46.5455 46.5455 v 46.5455 a 46.5455 46.5455 0 0 1 -46.5455 46.5455 Z M 488.727 23.2262 h 93.0444 V 581.818 H 488.727 V 23.2262 Z M 256 535.273 H 209.455 v 465.408 H 116.364 V 535.273 H 69.8182 a 46.5455 46.5455 0 0 1 -46.5455 -46.5455 v -46.5455 a 46.5455 46.5455 0 0 1 46.5455 -46.5455 h 186.182 a 46.5455 46.5455 0 0 1 46.5455 46.5455 v 46.5455 a 46.5455 46.5455 0 0 1 -46.5455 46.5455 Z M 116.364 23.2262 h 93.0909 v 325.818 H 116.364 v -325.818 Z"
+                  fill="#2c2c2c" p-id="854"></path>
+        </svg>
+        <h1>人生好句</h1>
+    </div>
+    <div class="row" style="margin-top: 20px; margin-bottom: 20px;">
+        <div class="form-control" style="width:100px;">
+            <div class="onoffswitch">
+                <input type="checkbox" name="lifeMotoSwitch" class="onoffswitch-checkbox" id="lifeMotoSwitch"
+                       checked>
+                <label class="onoffswitch-label" for="lifeMotoSwitch">
+                    <span class="onoffswitch-inner"></span>
+                    <span class="onoffswitch-switch"></span>
+                </label>
+            </div>
+        </div>
+        <div class="form-control" style="width:528px;">
+            <label class="form-label" style="vertical-align: top;">句子清单：</label>
+            <textarea class="form-input" placeholder="参考：窗前明月光#酒逢知己千杯少#西出阳关无故人" style="width:428px;height:228px;"></textarea>
+        </div>
+    </div>
+</div>
+
+<div class="row input-row row5">
+    <div class="title">
+        <svg class="icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;"
+             viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="853">
+            <path d="M 954.182 395.636 h -46.592 v 605.044 h -93.0909 V 395.636 H 768 a 46.5455 46.5455 0 0 1 -46.5455 -46.5455 v -46.5455 a 46.5455 46.5455 0 0 1 46.5455 -46.5455 h 186.182 a 46.5455 46.5455 0 0 1 46.5455 46.5455 v 46.5455 a 46.5455 46.5455 0 0 1 -46.5455 46.5455 Z M 814.499 23.2262 h 93.0909 v 186.182 h -93.0909 v -186.182 Z M 628.364 768 h -46.592 v 232.681 H 488.727 V 768 H 442.182 a 46.5455 46.5455 0 0 1 -46.5455 -46.5455 v -46.5455 a 46.5455 46.5455 0 0 1 46.5455 -46.5455 h 186.182 a 46.5455 46.5455 0 0 1 46.5455 46.5455 v 46.5455 a 46.5455 46.5455 0 0 1 -46.5455 46.5455 Z M 488.727 23.2262 h 93.0444 V 581.818 H 488.727 V 23.2262 Z M 256 535.273 H 209.455 v 465.408 H 116.364 V 535.273 H 69.8182 a 46.5455 46.5455 0 0 1 -46.5455 -46.5455 v -46.5455 a 46.5455 46.5455 0 0 1 46.5455 -46.5455 h 186.182 a 46.5455 46.5455 0 0 1 46.5455 46.5455 v 46.5455 a 46.5455 46.5455 0 0 1 -46.5455 46.5455 Z M 116.364 23.2262 h 93.0909 v 325.818 H 116.364 v -325.818 Z"
+                  fill="#2c2c2c" p-id="854"></path>
+        </svg>
+        <h1>收藏站点</h1>
+    </div>
+    <div class="row" style="margin-top: 20px; margin-bottom: 20px;">
+        <div class="form-control" style="width:100px;">
+            <div class="onoffswitch">
+                <input type="checkbox" name="collectedSitesSwitch" class="onoffswitch-checkbox" id="collectedSitesSwitch"
+                       checked>
+                <label class="onoffswitch-label" for="collectedSitesSwitch">
+                    <span class="onoffswitch-inner"></span>
+                    <span class="onoffswitch-switch"></span>
+                </label>
+            </div>
+        </div>
+        <div class="form-control" style="width:528px;">
+            <label class="form-label" style="vertical-align: top;">站点列表：</label>
+            <textarea class="form-input" placeholder="" style="width:428px;height:228px;"></textarea>
+        </div>
+    </div>
+</div>
+
+<div class="row input-row row6">
     <button type="button" rel="tooltip" title="保存配置后立刻生效" class="btn save-btn">
         保存配置
     </button>
 </div>
 </body>
 
+<script type="text/javascript" src="js/config.js"></script>
 </html>
