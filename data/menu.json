@@ -115,10 +115,16 @@
 						"url": "http://runjs.cn/code"
 					},
 					{
-						"title": "JSON<br/>编辑器",
+						"title": "开源中国<br/>在线工具",
 						"icon": "",
-						"icon-text": "JSON",
-						"url": "http://www.json.cn/"
+						"icon-text": "CTool",
+						"url": "http://tool.oschina.net/"
+					},
+					{
+						"title": "站长<br/>在线工具",
+						"icon": "",
+						"icon-text": "ZTool",
+						"url": "http://web.chacuo.net/"
 					},
 					{
 						"title": "Photoshop",
@@ -129,12 +135,6 @@
 						"title": "网络<br/>访问测试",
 						"icon": "17ce.png",
 						"url": "https://www.17ce.com/"
-					},
-					{
-						"title": "在线<br/>开发工具",
-						"icon": "",
-						"icon-text": "TOOL",
-						"url": "http://web.chacuo.net/"
 					},
 					{
 						"title": "在线切图",
