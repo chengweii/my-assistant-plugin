@@ -3,12 +3,9 @@
 		"enable": true,
 		"remindTimes": [
 			9,
-			10,
 			11,
 			15,
-			16,
 			17,
-			18,
 			19
 		]
 	},
@@ -30,6 +27,14 @@
 	"favoriteArticles": {
 		"enable": true,
 		"list": [
+			{
+				"name": "开发手册",
+				"url": "https://www.jianshu.com/p/39e69332f61b"
+			},
+			{
+				"name": "问题记录",
+				"url": "https://www.jianshu.com/p/d55faf99e5a3"
+			},
 			{
 				"name": "时间的格局",
 				"url": "http://www.jianshu.com/p/dc1f1e38eda6"
@@ -68,36 +73,6 @@
 						"title": "待办日程",
 						"icon": "schedule.png",
 						"url": "https://dida365.com/#p/59e4506be4b0e5eb1cd9fec7/tasks"
-					},
-					{
-						"title": "邮箱",
-						"icon": "mail.png",
-						"url": "https://mail.jiuxian.com"
-					},
-					{
-						"title": "OA",
-						"icon": "oa.png",
-						"url": "http://oa.jxwmanage.com/login/Login.jsp"
-					},
-					{
-						"title": "Gitlab-ZN",
-						"icon": "gitlab.png",
-						"url": "http://zn.gitlab.9ijx.com/"
-					},
-					{
-						"title": "Gitlab-JKD",
-						"icon": "gitlab.png",
-						"url": "http://gitlab.9ijx.com/"
-					},
-					{
-						"title": "[JKD]配置",
-						"icon": "default.png",
-						"url": "file:///D:/Mydata/%E6%8E%A5%E5%8F%A3%E5%AF%B9%E6%8E%A5/JKD-Config.md"
-					},
-					{
-						"title": "[ZNTG]配置",
-						"icon": "default.png",
-						"url": "file:///D:/Mydata/%E6%8E%A5%E5%8F%A3%E5%AF%B9%E6%8E%A5/ZNTG-Config.md"
 					}
 				]
 			},
@@ -276,6 +251,11 @@
 			{
 				"headText": "乱七八糟",
 				"list": [
+					{
+						"title": "在线音乐",
+						"icon": "default.png",
+						"url": "http://fm.taihe.com"
+					},
 					{
 						"title": "酷家乐<br/>在线装修",
 						"icon": "default.png",
